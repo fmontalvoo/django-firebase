@@ -1,0 +1,13 @@
+{% extends 'template.html' %}
+
+{% block root %}
+{% include "components/navbar.html" %}
+<main id="main">
+    <div class="container mt-3 mb-3">
+        {% block body %}
+        <h1>¡Hola Mundo!</h1>
+        {% endblock body %}
+    </div>
+</main>
+{% include "components/footer.html" %}
+{% endblock root %}
