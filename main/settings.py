@@ -17,9 +17,9 @@ from firebase_admin import credentials
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-DOTENV_PATH = BASE_DIR / '.env'
 
 # Carga las variables de entorno desde .env
+DOTENV_PATH = BASE_DIR / '.env'
 load_dotenv(DOTENV_PATH)
 
 # Quick-start development settings - unsuitable for production
