@@ -10,9 +10,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os
-from dotenv import load_dotenv
+import firebase_admin
 from pathlib import Path
-
+from dotenv import load_dotenv
+from firebase_admin import credentials
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,6 +27,11 @@ load_dotenv(DOTENV_PATH)
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = str(os.getenv('SECRET_KEY'))
+
+# Configuracion firebase
+GOOGLE_APPLICATION_CREDENTIALS = BASE_DIR / 'firebase-adminsdk.json'
+credential = credentials.Certificate(GOOGLE_APPLICATION_CREDENTIALS)
+firebase_admin.initialize_app(credential)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
