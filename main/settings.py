@@ -31,7 +31,8 @@ SECRET_KEY = str(os.getenv('SECRET_KEY'))
 # Configuracion firebase
 GOOGLE_APPLICATION_CREDENTIALS = BASE_DIR / 'firebase-adminsdk.json'
 credential = credentials.Certificate(GOOGLE_APPLICATION_CREDENTIALS)
-firebase_admin.initialize_app(credential)
+firebase_admin.initialize_app(
+    credential, {'storageBucket': 'data-base-38d79.appspot.com'})
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -48,7 +49,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'apps.home'
+    'apps.home',
+    'apps.user_profile',
 ]
 
 MIDDLEWARE = [
